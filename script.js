@@ -13,3 +13,10 @@ function multiply(a, b) {
 function divide(a, b) {
     return a / b;
 }
+
+function operate(operator, a, b) {
+    if (operator == "add") add(a, b);
+    else if (operator == "subtract") subtract(a, b);
+    else if (operator == "multiply") multiply(a, b);
+    else if (operator == "divide") divide(a, b);
+}
