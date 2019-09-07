@@ -1,18 +1,24 @@
+body {
+    background: black;
+}
+
 #container {
     width: 630px;
     margin: 50px auto;
     box-sizing: border-box;
+    background: #333;
+    border-radius: 10px;
 }
 
 #top {
     height: 100px;
-    border: 1px black solid;
     box-sizing: border-box;
 }
 
 #display {
     float: right;
     margin: 50px 60px;
+    color: white;
 }
 
 #buttons {
@@ -23,12 +29,21 @@
     align-items: center;
     grid-gap: 10px;
     box-sizing: border-box;
+    text-align: center;
 }
 
-.button {
+.btn {
+    background: #666;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.operator {
+    background: orange;
 }
 
 #clear, #zero {
     grid-column: 1 / 3;
-    /* fix positioning */
+    padding: 10px 85px;
 }
