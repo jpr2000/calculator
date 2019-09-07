@@ -39,7 +39,7 @@ body {
     border-radius: 10px;
 }
 
-.operator {
+.operator, #equals {
     background: orange;
 }
 
