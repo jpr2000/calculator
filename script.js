@@ -1,7 +1,7 @@
  let trailingZeros = /0+$/;    // maybe add functionality later
 
 function add(a, b) {
-    return (parseInt(a) + parseInt(b)).toFixed(5).replace(trailingZeros, '');
+    return (parseFloat(a) + parseFloat(b)).toFixed(5).replace(trailingZeros, '');
 }
 
 function subtract(a, b) {
@@ -40,7 +40,7 @@ function operatorPressed(operator) {
 }
 
 function evaluateOperations() {
-    numberArray.push(parseInt(display.textContent));
+    numberArray.push(parseFloat(display.textContent));
     
     if (isNaN(numberArray[numberArray.length - 1])) {
         numberArray[numberArray.length - 1] = 0;
@@ -63,7 +63,7 @@ let display = document.querySelector("#display");
 let numbers = document.querySelectorAll(".number");
 numbers.forEach(number => {
     number.addEventListener('click', () => {
-        if (display.textContent == 0) display.textContent = number.textContent;
+        if (display.textContent === "0") display.textContent = number.textContent;
         else display.textContent += number.textContent;
     });
 });
