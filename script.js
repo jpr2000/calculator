@@ -5,7 +5,6 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
-    console.log(typeof(a - b));
     return (a - b).toFixed(5);
 }
 
@@ -59,3 +58,10 @@ let clearButton = document.querySelector("#clear")
         .addEventListener('click', () => clearDisplay());
 
 let equalsButton = document.querySelector("#equals");
+
+let backspaceButton = document.querySelector("#backspace");
+backspaceButton.addEventListener('click', () => {
+    let displayArray = display.textContent.split('');
+    displayArray.pop();
+    display.textContent = displayArray.join('');
+})
