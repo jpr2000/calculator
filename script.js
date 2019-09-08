@@ -1,17 +1,20 @@
+// let trailingDecimal = /^.$/;    // maybe add functionality later
+
 function add(a, b) {
-    return parseFloat(a) + parseFloat(b);
+    return (a + b).toFixed(5);
 }
 
 function subtract(a, b) {
-    return a - b;
+    console.log(typeof(a - b));
+    return (a - b).toFixed(5);
 }
 
 function multiply(a, b) {
-    return a * b;
+    return (a * b).toFixed(5);
 }
 
 function divide(a, b) {
-    return a / b;
+    return (a / b).toFixed(5);
 }
 
 function operate(operator, a, b) {
@@ -26,16 +29,12 @@ function clearDisplay() {
 }
 
 function operatorPressed(operator) {
-    let a = display.textContent;
+    let a = parseFloat(display.textContent);
     clearDisplay();
     equalsButton.addEventListener('click', function displayResults() {
-        console.log("clicked :)");
-        let b = display.textContent;
-        console.log(a);
-        console.log(b);
-        display.textContent = operate(operator, a, display.textContent);
+        display.textContent = operate(operator, a, parseFloat(display.textContent));
         equalsButton.removeEventListener('click', displayResults);
-    }); // displayResults(operator, a)
+    });
 }
 
 
