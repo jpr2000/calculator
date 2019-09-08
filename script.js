@@ -1,4 +1,6 @@
- let trailingZeros = /0+$/;    // maybe add functionality later
+ // FUNCTIONS
+ 
+ let trailingZeros = /0+$/;
 
 function add(a, b) {
     return (parseFloat(a) + parseFloat(b)).toFixed(5).replace(trailingZeros, '');
@@ -24,7 +26,7 @@ function operate(operator, a, b) {
 }
 
 function clearAll() {
-    display.textContent = "0";
+    display.textContent = "";
     operatorArray = [];
     numberArray = [];
 }
@@ -56,7 +58,19 @@ function evaluateOperations() {
     numberArray = [];
 }
 
+function checkKey(e) {
+    if ((e.keyCode >= 48 && e.keyCode <= 57) || e.keyCode == 190) {
+        if (e.key == '*') operatorPressed("multiply");
+        else display.textContent += e.key;
+    }
+    else if (e.key == '+') operatorPressed("add");
+    else if (e.keyCode == 189) operatorPressed("subtract");
+    else if (e.keyCode == 191) operatorPressed("divide");
+    else if (e.keyCode == 67) clearAll();
+    else if (e.keyCode == 13 || e.keyCode == 187) evaluateOperations();
+}
 
+// DOM INITIATION
 
 let display = document.querySelector("#display");
 
@@ -87,6 +101,9 @@ backspaceButton.addEventListener('click', () => {
     displayArray.pop();
     display.textContent = displayArray.join('');
 })
+
+window.addEventListener('keydown', checkKey);
+
 
 let operatorArray = [];
 let numberArray = [];
