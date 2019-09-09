@@ -1,6 +1,6 @@
  // FUNCTIONS
  
- let trailingZeros = /0+$/;
+ let trailingZeros = /.0+$/;
 
 function add(a, b) {
     return (parseFloat(a) + parseFloat(b)).toFixed(5).replace(trailingZeros, '');
